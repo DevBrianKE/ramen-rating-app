@@ -22,3 +22,7 @@ function displayRamenDetails(ramen) {
     document.getElementById("ramen-image").src = ramen.image;
     document.getElementById("ramen-comment").textContent = ramen.comment;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayRamens();
+});
