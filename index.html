@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramen Rating App</title>
+    <title>Ramen Rater</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ramen Rating App</h1>
+    <h1>Ramen Rater</h1>
+
     <div id="ramen-menu"></div>
+
     <div id="ramen-detail">
-        <h2 id="ramen-name">Select a ramen</h2>
-        <p id="ramen-restaurant"></p>
-        <img id="ramen-image" src="" alt="Ramen Image">
-        <p id="ramen-comment"></p>
+        <img id="detail-image" src="" alt="Ramen Image">
+        <h2 id="ramen-name"></h2>
+        <h3 id="restaurant-name"></h3>
+        <p>Rating: <span id="ramen-rating"></span></p>
+        <p>Comment: <span id="ramen-comment"></span></p>
     </div>
+
+    <form id="ramen-form">
+        <h2>Add New Ramen</h2>
+        <input type="text" id="new-name" placeholder="Name" required>
+        <input type="text" id="new-restaurant" placeholder="Restaurant" required>
+        <input type="text" id="new-image" placeholder="Image URL" required>
+        <input type="number" id="new-rating" placeholder="Rating (1-5)" required>
+        <input type="text" id="new-comment" placeholder="Comment" required>
+        <button type="submit">Add Ramen</button>
+    </form>
+
     <script src="index.js"></script>
 </body>
-
 </html>
