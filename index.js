@@ -15,3 +15,10 @@ function displayRamens() {
         menu.appendChild(img);
     });
 }
+
+function displayRamenDetails(ramen) {
+    document.getElementById("ramen-name").textContent = ramen.name;
+    document.getElementById("ramen-restaurant").textContent = ramen.restaurant;
+    document.getElementById("ramen-image").src = ramen.image;
+    document.getElementById("ramen-comment").textContent = ramen.comment;
+}
