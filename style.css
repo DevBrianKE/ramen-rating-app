@@ -13,3 +13,8 @@ body {
     width: 300px;
     margin-top: 10px;
 }
+
+#ramen-detail {
+    margin-top: 20px;
+    padding: 10px;
+}
