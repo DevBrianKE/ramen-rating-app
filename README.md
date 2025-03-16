@@ -1,5 +1,8 @@
 # Ramen Rater
 
+## Live Demo
+Check out the live version of the application here: [Ramen Rater](https://devbrianke.github.io/ramen-rating-app/)
+
 ## Description
 Ramen Rater is a simple web application that allows users to browse, view details, and add their favorite ramen dishes. The application dynamically displays ramen images in a menu, and clicking on an image reveals more details such as the name, restaurant, rating, and a comment. Users can also add new ramen dishes using a form.
 
@@ -90,6 +93,7 @@ Contributions are welcome! If you would like to improve this project:
 ## Author
 **Kipchumba Brian**  
 GitHub: [DevBrianHQ](https://github.com/DevBrianHQ)  
+Twitter: [@bryan_kipchumba](https://twitter.com/bryan_kipchumba)
 
 ## License
 This project is licensed under the MIT License.
