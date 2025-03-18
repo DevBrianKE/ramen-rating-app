@@ -18,16 +18,20 @@ function displayRamens() {
     const ramenMenu = document.getElementById("ramen-menu");
     ramenMenu.innerHTML = ""; // Clear existing images
 
-    ramens.forEach((ramen) => {
+    ramens.forEach((ramen, index) => {
         const img = document.createElement("img");
         img.src = ramen.image;
         img.alt = ramen.name;
         img.addEventListener("click", () => handleClick(ramen));
         ramenMenu.appendChild(img);
+
+        // Automatically display details for the first ramen
+        if (index === 0) {
+            handleClick(ramen);
+        }
     });
 }
 
-// Display ramen details when clicked
 function handleClick(ramen) {
     document.getElementById("detail-image").src = ramen.image;
     document.getElementById("ramen-name").textContent = ramen.name;
@@ -47,6 +51,7 @@ function handleClick(ramen) {
 
     deleteContainer.appendChild(deleteBtn);
 }
+
 
 // Handle form submission for adding new ramen
 function addSubmitListener() {
