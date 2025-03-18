@@ -34,6 +34,18 @@ function handleClick(ramen) {
     document.getElementById("restaurant-name").textContent = ramen.restaurant;
     document.getElementById("ramen-rating").textContent = ramen.rating;
     document.getElementById("ramen-comment").textContent = ramen.comment;
+
+    // Add Delete Button
+    const deleteContainer = document.getElementById("delete-container");
+    deleteContainer.innerHTML = ""; // Clear previous button
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete Ramen";
+    deleteBtn.classList.add("delete-btn");
+
+    deleteBtn.addEventListener("click", () => removeRamen(ramen));
+
+    deleteContainer.appendChild(deleteBtn);
 }
 
 // Handle form submission for adding new ramen
