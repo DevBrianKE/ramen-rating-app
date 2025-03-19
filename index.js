@@ -39,16 +39,18 @@ function handleClick(ramen) {
     document.getElementById("ramen-rating").textContent = ramen.rating;
     document.getElementById("ramen-comment").textContent = ramen.comment;
 
-    // Add Delete Button
+    // Add a Delete Button dynamically
     const deleteContainer = document.getElementById("delete-container");
-    deleteContainer.innerHTML = ""; // Clear previous button
+    deleteContainer.innerHTML = ""; // Remove any previous delete button
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete Ramen";
     deleteBtn.classList.add("delete-btn");
 
+    // Attach event listener to delete the ramen when clicked
     deleteBtn.addEventListener("click", () => removeRamen(ramen));
 
+    // Append the button to the delete container
     deleteContainer.appendChild(deleteBtn);
 }
 
