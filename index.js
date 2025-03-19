@@ -60,6 +60,7 @@ function addSubmitListener() {
         e.preventDefault();
 
         const newRamen = {
+            id: ramens.length + 1, // Assign a new unique ID
             name: document.getElementById("new-name").value,
             restaurant: document.getElementById("new-restaurant").value,
             image: document.getElementById("new-image").value.trim(),
@@ -72,6 +73,9 @@ function addSubmitListener() {
             alert("Please enter a valid image URL ending in .jpg, .png, or .jpeg.");
             return;
         }
+
+        // Add new ramen to the array
+        ramens.push(newRamen);
 
         // Create Image Element
         const img = document.createElement("img");
@@ -86,6 +90,9 @@ function addSubmitListener() {
 
         // Add to Menu
         document.getElementById("ramen-menu").appendChild(img);
+
+        // Automatically show details of the new ramen
+        handleClick(newRamen);
 
         // Reset Form
         form.reset();
