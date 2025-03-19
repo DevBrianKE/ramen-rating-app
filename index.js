@@ -62,22 +62,32 @@ function addSubmitListener() {
         const newRamen = {
             name: document.getElementById("new-name").value,
             restaurant: document.getElementById("new-restaurant").value,
-            image: document.getElementById("new-image").value,
+            image: document.getElementById("new-image").value.trim(),
             rating: document.getElementById("new-rating").value,
             comment: document.getElementById("new-comment").value
         };
 
-        if (!newRamen.image.startsWith("http")) {
-            alert("Please enter a valid image URL.");
+        // Validate Image URL
+        if (!newRamen.image.startsWith("http") || (!newRamen.image.endsWith(".jpg") && !newRamen.image.endsWith(".png") && !newRamen.image.endsWith(".jpeg"))) {
+            alert("Please enter a valid image URL ending in .jpg, .png, or .jpeg.");
             return;
         }
 
+        // Create Image Element
         const img = document.createElement("img");
         img.src = newRamen.image;
         img.alt = newRamen.name;
+        img.onerror = () => {
+            alert("Image failed to load. Please check the URL.");
+            return;
+        };
+
         img.addEventListener("click", () => handleClick(newRamen));
 
+        // Add to Menu
         document.getElementById("ramen-menu").appendChild(img);
+
+        // Reset Form
         form.reset();
     });
 }
